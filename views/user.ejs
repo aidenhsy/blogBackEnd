@@ -13,8 +13,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1><%=user.username%></h1>
             </div>
           </div>
         </div>
@@ -25,7 +24,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <% for(var i = 0; i < posts.length; i++){%>
+          <% for(var i = 0; i < posts.length; i++){%> <% if(userID ==
+          posts[i].userid._id) {%>
           <div class="post-preview">
             <a href="/post/<%=posts[i]._id%>">
               <h2 class="post-title"><%=posts[i].title%></h2>
@@ -38,7 +38,7 @@
               on <%=posts[i].datePosted.toDateString()%>
             </p>
           </div>
-          <%}%>
+          <%}%><%}%>
           <hr />
           <!-- Pager -->
           <div class="clearfix">
