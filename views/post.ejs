@@ -7,7 +7,7 @@
     <%-include("layouts/navbar");%>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <header class="masthead" style="background-image: url('<%=post.image%>')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -16,7 +16,7 @@
               <h1><%=post.title%></h1>
               <span class="meta"
                 >Posted by
-                <a href="#">Start Bootstrap</a>
+                <a href="#"><%=post.userid.username%></a>
                 on <%=post.datePosted.toDateString()%></span
               >
             </div>

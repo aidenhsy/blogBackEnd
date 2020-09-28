@@ -18,15 +18,24 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
+        <% if(loggedIn){%>
         <li class="nav-item">
           <a class="nav-link" href="/post/create">New Post</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/<%=loggedIn%>">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/logout">Logout</a>
+        </li>
+        <%}%> <% if(!loggedIn){%>
         <li class="nav-item">
           <a class="nav-link" href="/auth/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/auth/register">Register</a>
         </li>
+        <%}%>
       </ul>
     </div>
   </div>
